@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finalize sua compra na BookVerse. Preencha seus dados de entrega, escolha a forma de pagamento e confirme seu pedido.">
+  <title>Checkout Seguro | BookVerse</title>
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/checkout.css">
+</head>
+<body>
+
+  <div class="announcement-bar" id="announcement-bar">
+     Frete grátis em leituras acima de R$35! Use o código LEITURACOZY
+  </div>
+
+  <header>
+    <div class="header-container">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <a href="../index.html" class="logo" id="header-logo">
+        Book<span>Verse</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="../index.html" class="nav-link" id="nav-home">Início</a>
+        <a href="catalog.html" class="nav-link" id="nav-catalog">Catálogo</a>
+        <a href="favorites.html" class="nav-link" id="nav-favorites">Favoritos</a>
+        <a href="profile.html" class="nav-link" id="nav-profile">Perfil</a>
+      </nav>
+
+      <div class="header-actions">
+        <form action="catalog.html" method="GET" class="search-form" id="search-form">
+          <input type="text" name="search" class="search-input" placeholder="Buscar livros..." aria-label="Buscar na livraria" id="search-input">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+        </form>
+
+        <a href="favorites.html" class="icon-btn" aria-label="Ver Favoritos" id="favorites-icon-btn">
+          <span>♥</span>
+          <span class="badge-count" id="favorites-badge">3</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Ver Carrinho" id="cart-icon-btn">
+          <span>🛒</span>
+          <span class="badge-count" id="cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="../index.html">Início</a>
+        <span class="separator" aria-hidden="true"></span>
+        <a href="cart.html">Carrinho de Compras</a>
+        <span class="separator" aria-hidden="true"></span>
+        <span class="active">Checkout</span>
+      </nav>
+
+      <h1 class="font-serif" style="font-size: 2.2rem; margin-bottom: var(--spacing-xl);">Checkout Seguro</h1>
+
+      <div class="checkout-layout">
+
+        <section aria-label="Formulários do Processo de Checkout">
+          <form action="profile.html#orders-history" method="POST" id="checkout-form">
+
+            <div class="checkout-form-section" id="checkout-step-shipping">
+              <h2 class="checkout-section-title">
+                <span class="checkout-section-number" aria-hidden="true">1</span> Destino de Entrega
+              </h2>
+
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label class="form-label" for="shipping-first-name">Nome</label>
+                  <input type="text" id="shipping-first-name" class="form-input" value="Aurelia" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="shipping-last-name">Sobrenome</label>
+                  <input type="text" id="shipping-last-name" class="form-input" value="Vance" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="shipping-address">Endereço</label>
+                <input type="text" id="shipping-address" class="form-input" value="12 Cozy Cottage Lane" placeholder="Rua, número, complemento" required>
+              </div>
+
+              <div class="form-row three-col">
+                <div class="form-group">
+                  <label class="form-label" for="shipping-city">Cidade</label>
+                  <input type="text" id="shipping-city" class="form-input" value="Woodland Glade" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="shipping-county">Estado</label>
+                  <input type="text" id="shipping-county" class="form-input" value="North Yorkshire" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="shipping-zip">CEP</label>
+                  <input type="text" id="shipping-zip" class="form-input" value="YO18 7LT" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="shipping-notes">Observações de Entrega (Opcional)</label>
+                <input type="text" id="shipping-notes" class="form-input" placeholder="Ex: Deixe na cesta de vime na varanda da frente">
+              </div>
+            </div>
+
+            <div class="checkout-form-section" id="checkout-step-payment">
+              <h2 class="checkout-section-title">
+                <span class="checkout-section-number" aria-hidden="true">2</span> Forma de Pagamento
+              </h2>
+
+              <div class="payment-methods-grid" role="radiogroup" aria-label="Seleção de Forma de Pagamento">
+
+                <label class="payment-method-card" id="payment-card-option">
+                  <input type="radio" name="payment-method" class="payment-radio" checked required>
+                  <span class="payment-icon" aria-hidden="true">💳</span>
+                  <span class="payment-name">Cartão de Crédito</span>
+                </label>
+
+                <label class="payment-method-card" id="payment-paypal-option">
+                  <input type="radio" name="payment-method" class="payment-radio" required>
+                  <span class="payment-icon" aria-hidden="true">🌐</span>
+                  <span class="payment-name">PayPal</span>
+                </label>
+
+                <label class="payment-method-card" id="payment-transfer-option">
+                  <input type="radio" name="payment-method" class="payment-radio" required>
+                  <span class="payment-icon" aria-hidden="true">🍵</span>
+                  <span class="payment-name">Tokens Literários</span>
+                </label>
+              </div>
+
+              <div class="credit-card-details" id="credit-card-fields-group">
+                <div class="form-group">
+                  <label class="form-label" for="cc-number">Número do Cartão</label>
+                  <input type="text" id="cc-number" class="form-input" value="4111 2222 3333 4444" placeholder="0000 0000 0000 0000" required>
+                </div>
+
+                <div class="form-row two-col">
+                  <div class="form-group">
+                    <label class="form-label" for="cc-expiry">Data de Validade</label>
+                    <input type="text" id="cc-expiry" class="form-input" value="12/28" placeholder="MM/YY" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cc-cvv">Código de Segurança (CVV)</label>
+                    <input type="password" id="cc-cvv" class="form-input" value="123" placeholder="CVV" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </section>
+
+        <aside class="checkout-summary-receipt" aria-label="Comprovante do Pedido">
+          <div class="receipt-padding">
+            <h2 class="receipt-title">BookVerse</h2>
+            <p class="receipt-subtitle">Comprovante de Curadoria Vintage</p>
+
+            <div class="receipt-items-list">
+              <div class="receipt-item-row">
+                <span class="receipt-item-name">The Whispering Woodlands <span>x 1</span></span>
+                <span class="receipt-item-price">$14.99</span>
+              </div>
+              <div class="receipt-item-row">
+                <span class="receipt-item-name">Midnight at Inkwood Manor <span>x 1</span></span>
+                <span class="receipt-item-price">$16.50</span>
+              </div>
+            </div>
+
+            <div class="summary-table">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>$31.49</span>
+              </div>
+              <div class="summary-row">
+                <span>Frete Estimado</span>
+                <span>$4.99</span>
+              </div>
+              <div class="summary-row discount">
+                <span>Desconto (LEITURACOZY)</span>
+                <span>-$3.15</span>
+              </div>
+              <div class="summary-row">
+                <span>Impostos</span>
+                <span>$2.50</span>
+              </div>
+              <div class="summary-row total" style="border-top: 2px dashed var(--color-border-linen); margin-top: var(--spacing-sm);">
+                <span>Total Geral</span>
+                <span>$35.83</span>
+              </div>
+            </div>
+
+            <p style="font-size: 0.75rem; text-align: center; color: var(--color-text-muted); margin-bottom: var(--spacing-md);">
+              * Pedidos são embalados com cuidado, envoltos em papel pardo lacrado com cera, e incluem chá.
+            </p>
+
+            <button type="submit" form="checkout-form" class="btn btn-primary btn-full" id="btn-submit-order">Confirmar e Finalizar Pedido</button>
+            <a href="cart.html" class="btn btn-text btn-full text-center" style="margin-top: var(--spacing-xs); font-size: 0.85rem;" id="btn-checkout-cancel">Voltar ao Carrinho</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <h3 class="font-serif">BookVerse</h3>
+          <p>A beautiful literary corner providing handcrafted structures, vintage-elegant covers, and sensory reading experiences since 2026.</p>
+          <address class="footer-socials">
+            <a href="#" aria-label="Siga-nos no Instagram">📸</a>
+            <a href="#" aria-label="Siga-nos no Pinterest">📌</a>
+            <a href="#" aria-label="Siga-nos no Twitter">🐦</a>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html" id="footer-link-catalog">Todos os Livros</a></li>
+            <li><a href="catalog.html?filter=new" id="footer-link-new">Novidades</a></li>
+            <li><a href="catalog.html?filter=bestsellers" id="footer-link-bestsellers">Mais Vendidos</a></li>
+            <li><a href="catalog.html?filter=sale" id="footer-link-sale">Ofertas Especiais</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Seu Santuário</h4>
+          <ul class="footer-links">
+            <li><a href="profile.html" id="footer-link-profile">Sua Conta</a></li>
+            <li><a href="favorites.html" id="footer-link-favorites">Lista de Desejos (Favoritos)</a></li>
+            <li><a href="cart.html" id="footer-link-cart">Carrinho de Compras</a></li>
+            <li><a href="checkout.html" id="footer-link-checkout">Painel de Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>A Carta Literária</h4>
+          <p class="footer-newsletter-text">Assine para receber resenhas literárias, destaques vintage e descontos.</p>
+          <form class="newsletter-form" id="newsletter-form" action="#" method="POST">
+            <input type="email" placeholder="Seu e-mail..." aria-label="Seu endereço de e-mail" class="newsletter-input" required id="newsletter-email">
+            <button type="submit" class="btn btn-primary btn-sm" id="newsletter-submit">Assinar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 BookVerse. Desenvolvido com HTML5 e CSS3 puros.</p>
+        <div class="footer-payment-icons" aria-label="Formas de Pagamento">
+          <span>💳</span> <span>🌐</span> <span>🍵</span> <span>📦</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
