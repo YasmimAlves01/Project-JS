@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja seus livros salvos na BookVerse. Gerencie sua lista de desejos e mova livros para o carrinho facilmente.">
+  <title>Seus Favoritos | BookVerse Lista de Desejos</title>
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/favorites.css">
+</head>
+<body>
+
+  <div class="announcement-bar" id="announcement-bar">
+     Frete grátis em leituras acima de R$35! Use o código LEITURACOZY
+  </div>
+
+  <header>
+    <div class="header-container">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <a href="../index.html" class="logo" id="header-logo">
+        Book<span>Verse</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="../index.html" class="nav-link" id="nav-home">Início</a>
+        <a href="catalog.html" class="nav-link" id="nav-catalog">Catálogo</a>
+        <a href="favorites.html" class="nav-link active" id="nav-favorites">Favoritos</a>
+        <a href="profile.html" class="nav-link" id="nav-profile">Perfil</a>
+      </nav>
+
+      <div class="header-actions">
+        <form action="catalog.html" method="GET" class="search-form" id="search-form">
+          <input type="text" name="search" class="search-input" placeholder="Buscar livros..." aria-label="Buscar na livraria" id="search-input">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+        </form>
+
+        <a href="favorites.html" class="icon-btn" aria-label="Ver Favoritos" id="favorites-icon-btn">
+          <span>♥</span>
+          <span class="badge-count" id="favorites-badge">3</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Ver Carrinho" id="cart-icon-btn">
+          <span>🛒</span>
+          <span class="badge-count" id="cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="../index.html">Início</a>
+        <span class="separator" aria-hidden="true"></span>
+        <span class="active">Favoritos</span>
+      </nav>
+
+      <section class="favorites-header" aria-label="Wishlist Summary">
+        <h1 class="favorites-header-title">
+          Sua Lista de Desejos
+          <span>Você tem <strong>3</strong> joias literárias esperando por uma xícara de chá quente.</span>
+        </h1>
+        <a href="catalog.html" class="btn btn-outline" id="favorites-continue-browsing">Continuar Explorando</a>
+      </section>
+
+      <section aria-label="Grade de Livros Salvos">
+        <div class="book-grid">
+
+          <article class="book-card" id="fav-book-card-1">
+            <div class="book-tag sale">25% Off</div>
+            <div class="book-card-cover">
+              <div class="book-cover-css cover-theme-2" aria-hidden="true">
+                <span class="cover-emblem">🌿</span>
+                <div class="cover-title-text">The Whispering Woodlands</div>
+                <div class="cover-author-text">Clara Hearthwood</div>
+              </div>
+            </div>
+            <span class="book-card-genre">Ficção</span>
+            <h3 class="book-card-title"><a href="details.html">The Whispering Woodlands</a></h3>
+            <p class="book-card-author">de Clara Hearthwood</p>
+            <div class="book-card-meta">
+              <div class="rating-stars">★★★★★ <span class="rating-count">(42)</span></div>
+              <span class="book-card-price">$14.99 <span class="book-card-price-original">$19.99</span></span>
+
+              <div class="favorites-actions-row">
+                <a href="cart.html" class="btn btn-primary btn-sm" id="fav-move-cart-1">🛒 Mover para o Carrinho</a>
+                <button class="remove-favorite-btn" aria-label="Remover The Whispering Woodlands da lista de desejos" id="fav-remove-1">✕</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card" id="fav-book-card-3">
+            <div class="book-card-cover">
+              <div class="book-cover-css cover-theme-3" aria-hidden="true">
+                <span class="cover-emblem">✦</span>
+                <div class="cover-title-text">Stars &amp; Small Delights</div>
+                <div class="cover-author-text">Aurelia Vance</div>
+              </div>
+            </div>
+            <span class="book-card-genre">Poesia</span>
+            <h3 class="book-card-title"><a href="details.html">Stars &amp; Small Delights</a></h3>
+            <p class="book-card-author">de Aurelia Vance</p>
+            <div class="book-card-meta">
+              <div class="rating-stars">★★★★★ <span class="rating-count">(29)</span></div>
+              <span class="book-card-price">$12.99</span>
+
+              <div class="favorites-actions-row">
+                <a href="cart.html" class="btn btn-primary btn-sm" id="fav-move-cart-3">🛒 Mover para o Carrinho</a>
+                <button class="remove-favorite-btn" aria-label="Remover Stars &amp; Small Delights da lista de desejos" id="fav-remove-3">✕</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card" id="fav-book-card-5">
+            <div class="book-tag">Premium</div>
+            <div class="book-card-cover">
+              <div class="book-cover-css cover-theme-5" aria-hidden="true">
+                <span class="cover-emblem">🍯</span>
+                <div class="cover-title-text">Cottage Bread &amp; Wild Honey</div>
+                <div class="cover-author-text">Rowan Gable</div>
+              </div>
+            </div>
+            <span class="book-card-genre">Artes e Ofícios</span>
+            <h3 class="book-card-title"><a href="details.html">Cottage Bread &amp; Wild Honey</a></h3>
+            <p class="book-card-author">de Rowan Gable</p>
+            <div class="book-card-meta">
+              <div class="rating-stars">★★★★★ <span class="rating-count">(84)</span></div>
+              <span class="book-card-price">$22.00</span>
+
+              <div class="favorites-actions-row">
+                <a href="cart.html" class="btn btn-primary btn-sm" id="fav-move-cart-5">🛒 Mover para o Carrinho</a>
+                <button class="remove-favorite-btn" aria-label="Remover Cottage Bread &amp; Wild Honey da lista de desejos" id="fav-remove-5">✕</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <h3 class="font-serif">BookVerse</h3>
+          <p>Um belo canto literário que oferece estruturas artesanais, capas de elegância vintage e experiências de leitura sensoriais desde 2026.</p>
+          <address class="footer-socials">
+            <a href="#" aria-label="Siga-nos no Instagram">📸</a>
+            <a href="#" aria-label="Siga-nos no Pinterest">📌</a>
+            <a href="#" aria-label="Siga-nos no Twitter">🐦</a>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html" id="footer-link-catalog">Todos os Livros</a></li>
+            <li><a href="catalog.html?filter=new" id="footer-link-new">Novidades</a></li>
+            <li><a href="catalog.html?filter=bestsellers" id="footer-link-bestsellers">Mais Vendidos</a></li>
+            <li><a href="catalog.html?filter=sale" id="footer-link-sale">Ofertas Especiais</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Seu Santuário</h4>
+          <ul class="footer-links">
+            <li><a href="profile.html" id="footer-link-profile">Sua Conta</a></li>
+            <li><a href="favorites.html" id="footer-link-favorites">Lista de Desejos (Favoritos)</a></li>
+            <li><a href="cart.html" id="footer-link-cart">Carrinho de Compras</a></li>
+            <li><a href="checkout.html" id="footer-link-checkout">Painel de Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>A Carta Literária</h4>
+          <p class="footer-newsletter-text">Assine para receber resenhas literárias, destaques de livros vintage e descontos.</p>
+          <form class="newsletter-form" id="newsletter-form" action="#" method="POST">
+            <input type="email" placeholder="Seu e-mail..." aria-label="Seu endereço de e-mail" class="newsletter-input" required id="newsletter-email">
+            <button type="submit" class="btn btn-primary btn-sm" id="newsletter-submit">Assinar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 BookVerse. Desenvolvido com HTML5 e CSS3 puros. Criado com tons quentes e aconchegantes.</p>
+        <div class="footer-payment-icons" aria-label="Formas de Pagamento">
+          <span>💳</span> <span>🌐</span> <span>🍵</span> <span>📦</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

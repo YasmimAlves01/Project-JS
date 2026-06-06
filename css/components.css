@@ -1,8 +1,3 @@
-/* BookVerse - Reusable UI Components Stylesheet */
-
-/* ==========================================
-   1. ANNOUNCEMENT BAR & MAIN HEADER
-   ========================================== */
 .announcement-bar {
   background-color: var(--color-accent-terracotta);
   color: var(--bg-card-cream);
@@ -32,7 +27,7 @@ header {
   margin: 0 auto;
 }
 
-/* Brand Logo */
+
 .logo {
   font-family: var(--font-serif);
   font-size: 1.8rem;
@@ -49,7 +44,7 @@ header {
   font-weight: 400;
 }
 
-/* Navigation Links */
+
 .nav-menu {
   display: flex;
   gap: var(--spacing-lg);
@@ -84,7 +79,7 @@ header {
   width: 100%;
 }
 
-/* Header Search & Actions */
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -93,7 +88,7 @@ header {
 
 .search-form {
   position: relative;
-  display: none; /* Hidden on small screens, shown on desktop */
+  display: none; 
 }
 
 @media (min-width: 992px) {
@@ -128,7 +123,7 @@ header {
   pointer-events: none;
 }
 
-/* Action Icons */
+
 .icon-btn {
   position: relative;
   color: var(--color-text-charcoal);
@@ -162,7 +157,7 @@ header {
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Pure CSS Hamburger Mobile Menu */
+
 .nav-toggle {
   display: none;
 }
@@ -230,9 +225,6 @@ header {
 }
 
 
-/* ==========================================
-   2. BUTTONS
-   ========================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -310,9 +302,7 @@ header {
 }
 
 
-/* ==========================================
-   3. BOOK CARDS & GRIDS
-   ========================================== */
+
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -337,7 +327,7 @@ header {
   border-color: var(--color-border-linen-hover);
 }
 
-/* Card Cover Wrapper */
+
 .book-card-cover {
   position: relative;
   background-color: var(--bg-warm-cream);
@@ -363,7 +353,7 @@ header {
   transform: scale(1.04);
 }
 
-/* Overlay badges */
+
 .book-tag {
   position: absolute;
   top: 12px;
@@ -383,7 +373,7 @@ header {
   background-color: var(--color-accent-terracotta);
 }
 
-/* Favorite Toggle overlay button */
+
 .favorite-btn-overlay {
   position: absolute;
   top: 12px;
@@ -410,7 +400,7 @@ header {
   transform: scale(1.05);
 }
 
-/* Card details styling */
+
 .book-card-genre {
   font-size: 0.75rem;
   color: var(--color-text-muted);
@@ -485,9 +475,7 @@ header {
   font-weight: 400;
 }
 
-/* ==========================================
-   4. FORM CONTROLS
-   ========================================== */
+
 .form-group {
   margin-bottom: var(--spacing-md);
 }
@@ -546,9 +534,6 @@ textarea.form-input {
 }
 
 
-/* ==========================================
-   5. BREADCRUMBS
-   ========================================== */
 .breadcrumbs {
   font-size: 0.85rem;
   color: var(--color-text-muted);
@@ -569,9 +554,6 @@ textarea.form-input {
 }
 
 
-/* ==========================================
-   6. EMPTY STATE COMPONENT
-   ========================================== */
 .empty-state {
   text-align: center;
   padding: var(--spacing-xxl) var(--spacing-lg);
@@ -600,9 +582,6 @@ textarea.form-input {
 }
 
 
-/* ==========================================
-   7. FOOTER
-   ========================================== */
 footer {
   background-color: var(--bg-card-cream);
   border-top: 1px solid var(--color-border-linen);
@@ -725,9 +704,6 @@ footer {
 }
 
 
-/* ==========================================
-   8. CSS-ONLY STYLED BOOK COVERS
-   ========================================== */
 .book-cover-css {
   width: 140px;
   height: 200px;
@@ -740,7 +716,7 @@ footer {
   position: relative;
   box-shadow: 3px 6px 15px rgba(46, 37, 32, 0.2);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  border-left: 5px solid rgba(0, 0, 0, 0.25); /* Spine crease simulation */
+  border-left: 5px solid rgba(0, 0, 0, 0.25); 
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -752,10 +728,10 @@ footer {
   left: 5px;
   width: 1px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.08); /* Crease highlight */
+  background: rgba(255, 255, 255, 0.08); 
 }
 
-/* Specific Cover Themes */
+
 .cover-theme-1 {
   background: linear-gradient(135deg, #3D2B24 0%, #1E120E 100%);
   border: 4px double var(--color-highlight-amber);
@@ -781,7 +757,7 @@ footer {
   border: 2px dashed rgba(255, 255, 255, 0.3);
 }
 
-/* Cover Text Elements */
+
 .cover-title-text {
   font-family: var(--font-serif);
   font-size: 0.75rem;
@@ -817,7 +793,7 @@ footer {
   line-height: 1;
 }
 
-/* Custom CSS-only Hero Illustration */
+
 .hero-illustration-css {
   background: radial-gradient(circle at 60% 40%, var(--bg-card-cream) 0%, #F5ECE1 100%);
   border: 1px solid var(--color-border-linen);
