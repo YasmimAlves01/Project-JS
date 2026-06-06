@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Revise os livros no seu carrinho da BookVerse. Verifique preços, ajuste quantidades e calcule o frete antes de finalizar.">
-  <title>Seu Carrinho | BookVerse</title>
+  <meta name="description" content="Gerencie seu perfil na BookVerse. Acesse históricos de pedidos, endereços salvos e configurações de e-mail.">
+  <title>Painel do Leitor | BookVerse</title>
   <link rel="stylesheet" href="../css/theme.css">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/pages/cart.css">
+  <link rel="stylesheet" href="../css/pages/profile.css">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
         <a href="../index.html" class="nav-link" id="nav-home">Início</a>
         <a href="catalog.html" class="nav-link" id="nav-catalog">Catálogo</a>
         <a href="favorites.html" class="nav-link" id="nav-favorites">Favoritos</a>
-        <a href="profile.html" class="nav-link" id="nav-profile">Perfil</a>
+        <a href="profile.html" class="nav-link active" id="nav-profile">Perfil</a>
       </nav>
 
       <div class="header-actions">
@@ -61,123 +61,146 @@
       <nav class="breadcrumbs" aria-label="Breadcrumbs">
         <a href="../index.html">Início</a>
         <span class="separator" aria-hidden="true"></span>
-        <span class="active">Carrinho de Compras</span>
+        <span class="active">Painel do Perfil</span>
       </nav>
 
-      <h1 class="font-serif" style="font-size: 2.2rem; margin-bottom: var(--spacing-xl);">Seu Carrinho de Leitura</h1>
+      <div class="profile-layout">
 
-      <div class="cart-layout">
-
-        <section class="cart-items-container" aria-label="Itens no carrinho de compras">
-
-          <article class="cart-item" id="cart-item-1">
-
-            <div class="cart-item-cover-wrapper">
-              <div class="book-cover-css cover-theme-2" aria-hidden="true">
-                <span class="cover-emblem">🌿</span>
-                <div class="cover-title-text" style="font-size: 0.5rem; margin-top: 5px;">The Whispering Woodlands</div>
-                <div class="cover-author-text" style="font-size: 0.4rem; margin-bottom: 2px;">Clara Hearthwood</div>
-              </div>
-            </div>
-
-            <div class="cart-item-info">
-              <h2 class="cart-item-title"><a href="details.html">The Whispering Woodlands</a></h2>
-              <p class="cart-item-author">de Clara Hearthwood</p>
-              <span class="cart-item-meta">Formato: Capa Dura em Linho</span>
-            </div>
-
-            <span class="cart-item-price-unit">$14.99</span>
-
-            <div class="quantity-selector cart-item-qty" aria-label="Ajustar quantidade">
-              <button class="quantity-btn" aria-label="Diminuir quantidade">-</button>
-              <input type="text" class="quantity-input" value="1" readonly aria-label="Quantidade de itens">
-              <button class="quantity-btn" aria-label="Aumentar quantidade">+</button>
-            </div>
-
-            <span class="cart-item-price-subtotal">$14.99</span>
-
-            <button class="cart-item-remove-btn" aria-label="Remover The Whispering Woodlands do carrinho" id="cart-remove-1">✕</button>
-
-          </article>
-
-          <article class="cart-item" id="cart-item-2">
-
-            <div class="cart-item-cover-wrapper">
-              <div class="book-cover-css cover-theme-1" aria-hidden="true">
-                <span class="cover-emblem">🔍</span>
-                <div class="cover-title-text" style="font-size: 0.5rem; margin-top: 5px;">Midnight at Inkwood Manor</div>
-                <div class="cover-author-text" style="font-size: 0.4rem; margin-bottom: 2px;">Julian Croft</div>
-              </div>
-            </div>
-
-            <div class="cart-item-info">
-              <h2 class="cart-item-title"><a href="details.html">Midnight at Inkwood Manor</a></h2>
-              <p class="cart-item-author">de Julian Croft</p>
-              <span class="cart-item-meta">Formato: Brochura</span>
-            </div>
-
-            <span class="cart-item-price-unit">$16.50</span>
-
-            <div class="quantity-selector cart-item-qty" aria-label="Ajustar quantidade">
-              <button class="quantity-btn" aria-label="Diminuir quantidade">-</button>
-              <input type="text" class="quantity-input" value="1" readonly aria-label="Quantidade de itens">
-              <button class="quantity-btn" aria-label="Aumentar quantidade">+</button>
-            </div>
-
-            <span class="cart-item-price-subtotal">$16.50</span>
-
-            <button class="cart-item-remove-btn" aria-label="Remover Midnight at Inkwood Manor do carrinho" id="cart-remove-2">✕</button>
-
-          </article>
-
-        </section>
-
-        <aside class="order-summary" aria-label="Resumo do Carrinho">
-          <h2 class="summary-title">Resumo do Pedido</h2>
-
-          <div class="shipping-progress-card">
-            <p class="shipping-progress-text">Adicione mais <strong>R$3,51</strong> para frete <strong>GRÁTIS</strong>!</p>
-            <div class="shipping-progress-bar" aria-hidden="true">
-              <div class="shipping-progress-fill"></div>
-            </div>
+        <aside class="profile-sidebar" aria-label="Opções do Perfil do Leitor">
+          <div class="profile-card-summary">
+            <div class="profile-avatar-mock" aria-hidden="true">AV</div>
+            <h2 class="profile-user-name">Aurelia Vance</h2>
+            <p class="profile-user-email">aurelia@woodlandreads.com</p>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="coupon-code">Voucher / Cupom de Desconto</label>
-            <div class="coupon-form">
-              <input type="text" id="coupon-code" class="coupon-input" value="LEITURACOZY" placeholder="Insira o cupom" aria-label="Discount Coupon Code">
-              <button type="button" class="btn btn-outline btn-sm" id="btn-apply-coupon">Aplicar</button>
-            </div>
-          </div>
-
-          <div class="summary-table">
-            <div class="summary-row">
-              <span>Subtotal do Carrinho (2 livros)</span>
-              <span>$31.49</span>
-            </div>
-            <div class="summary-row">
-              <span>Frete</span>
-              <span>$4.99</span>
-            </div>
-            <div class="summary-row discount">
-              <span>Desconto Promocional (LEITURACOZY)</span>
-              <span>-$3.15</span>
-            </div>
-            <div class="summary-row">
-              <span>Impostos Estimados</span>
-              <span>$2.50</span>
-            </div>
-            <div class="summary-row total">
-              <span>Total Geral</span>
-              <span>$35.83</span>
-            </div>
-          </div>
-
-          <a href="checkout.html" class="btn btn-primary btn-full" id="btn-proceed-checkout">Finalizar Compra</a>
-          <a href="catalog.html" class="btn btn-text btn-full text-center" style="margin-top: var(--spacing-sm); font-size: 0.85rem;" id="btn-cart-continue">Continuar Comprando</a>
+          <nav class="profile-nav-list" aria-label="Navegação pelas seções do painel">
+            <a href="#personal-info" class="profile-nav-link active" id="profile-nav-personal">👤 Dados Pessoais</a>
+            <a href="#orders-history" class="profile-nav-link" id="profile-nav-orders">📦 Histórico de Pedidos</a>
+            <a href="#saved-addresses" class="profile-nav-link" id="profile-nav-addresses">🏡 Endereços Salvos</a>
+            <a href="#settings" class="profile-nav-link" id="profile-nav-settings">⚙️ Configurações da Conta</a>
+            <a href="../index.html" class="profile-nav-link logout" id="profile-nav-logout">🚪 Sair (Logout)</a>
+          </nav>
         </aside>
 
+        <section class="profile-content-sheet" aria-label="Painel do Perfil">
+
+          <div class="profile-section-block" id="personal-info" style="margin-bottom: var(--spacing-xxl);">
+            <h2 class="profile-content-title">Dados Pessoais</h2>
+            <form action="#" method="POST" id="profile-details-form">
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label class="form-label" for="profile-first-name">Nome</label>
+                  <input type="text" id="profile-first-name" class="form-input" value="Aurelia" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="profile-last-name">Sobrenome</label>
+                  <input type="text" id="profile-last-name" class="form-input" value="Vance" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="profile-email">Endereço de E-mail</label>
+                <input type="email" id="profile-email" class="form-input" value="aurelia@woodlandreads.com" required>
+              </div>
+
+              <div class="form-row two-col" style="margin-bottom: var(--spacing-md);">
+                <div class="form-group">
+                  <label class="form-label" for="profile-phone">Número de Contato</label>
+                  <input type="tel" id="profile-phone" class="form-input" value="+44 7700 900077">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="profile-password">Senha Atual</label>
+                  <input type="password" id="profile-password" class="form-input" value="••••••••••••" readonly>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-save-profile">Salvar Alterações</button>
+            </form>
+          </div>
+
+          <div class="profile-section-block" id="orders-history" style="margin-bottom: var(--spacing-xxl); border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
+            <h2 class="profile-content-title">Histórico de Pedidos</h2>
+            <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted);">Acompanhe suas curadoria recentes de livros vintage e envios.</p>
+
+            <div class="orders-table-wrapper">
+              <table class="orders-table">
+                <thead>
+                  <tr>
+                    <th>Ref. #</th>
+                    <th>Data do Pedido</th>
+                    <th>Status</th>
+                    <th>Total Final</th>
+                    <th>Detalhes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="order-row-1102">
+                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1102</td>
+                    <td>May 27, 2026</td>
+                    <td><span class="status-badge processing">Processando</span></td>
+                    <td style="font-weight: 600;">$35.83</td>
+                    <td><a href="checkout.html" class="btn btn-outline btn-sm" id="order-invoice-1102">Ver Resumo</a></td>
+                  </tr>
+
+                  <tr id="order-row-1084">
+                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1084</td>
+                    <td>May 02, 2026</td>
+                    <td><span class="status-badge delivered">Entregue</span></td>
+                    <td style="font-weight: 600;">$18.99</td>
+                    <td><a href="#" class="btn btn-outline btn-sm" id="order-invoice-1084">Comprovante</a></td>
+                  </tr>
+
+                  <tr id="order-row-1021">
+                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1021</td>
+                    <td>April 12, 2026</td>
+                    <td><span class="status-badge delivered">Entregue</span></td>
+                    <td style="font-weight: 600;">$29.49</td>
+                    <td><a href="#" class="btn btn-outline btn-sm" id="order-invoice-1021">Comprovante</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="profile-section-block" id="saved-addresses" style="border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
+            <h2 class="profile-content-title">Endereços Salvos</h2>
+            <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted);">Gerencie seus endereços de entrega padrão.</p>
+
+            <div class="address-grid">
+              <div class="address-card default" id="address-card-1">
+                <span class="address-badge-default">Padrão</span>
+                <p class="address-card-name">Aurelia Vance</p>
+                <p class="address-card-text">
+                  12 Cozy Cottage Lane<br>
+                  Woodland Glade, North Yorkshire<br>
+                  YO18 7LT, United Kingdom
+                </p>
+                <div class="address-card-actions">
+                  <a href="#" id="address-edit-1">Editar</a>
+                  <span style="color: var(--color-border-linen-hover);">|</span>
+                  <a href="#" id="address-remove-1" style="color: var(--color-text-muted);">Remover</a>
+                </div>
+              </div>
+
+              <div class="address-card" id="address-card-2">
+                <p class="address-card-name">Aurelia Vance (Edinburgh Studio)</p>
+                <p class="address-card-text">
+                  4 Inkwood Nook, Studio B<br>
+                  Old Town, Edinburgh<br>
+                  EH1 1TB, United Kingdom
+                </p>
+                <div class="address-card-actions">
+                  <a href="#" id="address-edit-2">Editar</a>
+                  <span style="color: var(--color-border-linen-hover);">|</span>
+                  <a href="#" id="address-remove-2" style="color: var(--color-text-muted);">Remover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
       </div>
+
     </div>
   </main>
 
