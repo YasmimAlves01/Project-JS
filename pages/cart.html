@@ -69,67 +69,6 @@
       <div class="cart-layout">
 
         <section class="cart-items-container" aria-label="Itens no carrinho de compras">
-
-          <article class="cart-item" id="cart-item-1">
-
-            <div class="cart-item-cover-wrapper">
-              <div class="book-cover-css cover-theme-2" aria-hidden="true">
-                <span class="cover-emblem">🌿</span>
-                <div class="cover-title-text" style="font-size: 0.5rem; margin-top: 5px;">The Whispering Woodlands</div>
-                <div class="cover-author-text" style="font-size: 0.4rem; margin-bottom: 2px;">Clara Hearthwood</div>
-              </div>
-            </div>
-
-            <div class="cart-item-info">
-              <h2 class="cart-item-title"><a href="details.html">The Whispering Woodlands</a></h2>
-              <p class="cart-item-author">de Clara Hearthwood</p>
-              <span class="cart-item-meta">Formato: Capa Dura em Linho</span>
-            </div>
-
-            <span class="cart-item-price-unit">$14.99</span>
-
-            <div class="quantity-selector cart-item-qty" aria-label="Ajustar quantidade">
-              <button class="quantity-btn" aria-label="Diminuir quantidade">-</button>
-              <input type="text" class="quantity-input" value="1" readonly aria-label="Quantidade de itens">
-              <button class="quantity-btn" aria-label="Aumentar quantidade">+</button>
-            </div>
-
-            <span class="cart-item-price-subtotal">$14.99</span>
-
-            <button class="cart-item-remove-btn" aria-label="Remover The Whispering Woodlands do carrinho" id="cart-remove-1">✕</button>
-
-          </article>
-
-          <article class="cart-item" id="cart-item-2">
-
-            <div class="cart-item-cover-wrapper">
-              <div class="book-cover-css cover-theme-1" aria-hidden="true">
-                <span class="cover-emblem">🔍</span>
-                <div class="cover-title-text" style="font-size: 0.5rem; margin-top: 5px;">Midnight at Inkwood Manor</div>
-                <div class="cover-author-text" style="font-size: 0.4rem; margin-bottom: 2px;">Julian Croft</div>
-              </div>
-            </div>
-
-            <div class="cart-item-info">
-              <h2 class="cart-item-title"><a href="details.html">Midnight at Inkwood Manor</a></h2>
-              <p class="cart-item-author">de Julian Croft</p>
-              <span class="cart-item-meta">Formato: Brochura</span>
-            </div>
-
-            <span class="cart-item-price-unit">$16.50</span>
-
-            <div class="quantity-selector cart-item-qty" aria-label="Ajustar quantidade">
-              <button class="quantity-btn" aria-label="Diminuir quantidade">-</button>
-              <input type="text" class="quantity-input" value="1" readonly aria-label="Quantidade de itens">
-              <button class="quantity-btn" aria-label="Aumentar quantidade">+</button>
-            </div>
-
-            <span class="cart-item-price-subtotal">$16.50</span>
-
-            <button class="cart-item-remove-btn" aria-label="Remover Midnight at Inkwood Manor do carrinho" id="cart-remove-2">✕</button>
-
-          </article>
-
         </section>
 
         <aside class="order-summary" aria-label="Resumo do Carrinho">
@@ -151,25 +90,21 @@
           </div>
 
           <div class="summary-table">
-            <div class="summary-row">
-              <span>Subtotal do Carrinho (2 livros)</span>
-              <span>$31.49</span>
+            <div class="summary-row" id="summary-subtotal">
+              <span>Subtotal do Carrinho</span>
+              <span>R$ 0.00</span>
             </div>
-            <div class="summary-row">
+            <div class="summary-row" id="summary-shipping">
               <span>Frete</span>
-              <span>$4.99</span>
+              <span>R$ 0.00</span>
             </div>
-            <div class="summary-row discount">
-              <span>Desconto Promocional (LEITURACOZY)</span>
-              <span>-$3.15</span>
+            <div class="summary-row discount" id="summary-discount" style="display: none;">
+              <span>Desconto (LEITURACOZY)</span>
+              <span>-R$ 0.00</span>
             </div>
-            <div class="summary-row">
-              <span>Impostos Estimados</span>
-              <span>$2.50</span>
-            </div>
-            <div class="summary-row total">
+            <div class="summary-row total" id="summary-total">
               <span>Total Geral</span>
-              <span>$35.83</span>
+              <span>R$ 0.00</span>
             </div>
           </div>
 
