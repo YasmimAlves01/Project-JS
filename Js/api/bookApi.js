@@ -1,7 +1,7 @@
 const BASE_URL = 'https://openlibrary.org';
 
 async function getBooks(query) {
-  const url = `${BASE_URL}/search.json?q=${encodeURIComponent(query)}&limit=12&fields=key,title,author_name,first_publish_year,subject,ratings_average,ratings_count,cover_i`;
+  const url = `${BASE_URL}/search.json?q=${encodeURIComponent(query)}&limit=100&fields=key,title,author_name,first_publish_year,subject,language,ratings_average,ratings_count,cover_i`;
   const response = await fetch(url);
   if (!response.ok) throw new Error('Falha ao buscar livros');
   return response.json();
