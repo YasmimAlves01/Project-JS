@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gerencie seu perfil na BookVerse. Acesse históricos de pedidos, endereços salvos e configurações de e-mail.">
+  <meta name="description"
+    content="Gerencie seu perfil na BookVerse. Acesse históricos de pedidos, endereços salvos e configurações de e-mail.">
   <title>Painel do Leitor | BookVerse</title>
   <link rel="stylesheet" href="../css/theme.css">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/pages/profile.css">
 </head>
+
 <body data-page="profile">
 
   <div class="announcement-bar" id="announcement-bar">
-     Frete grátis em leituras acima de R$35! Use o código LEITURACOZY
+    Frete grátis em leituras acima de R$35! Use o código LEITURACOZY
   </div>
 
   <header>
@@ -38,7 +41,8 @@
 
       <div class="header-actions">
         <form action="catalog.html" method="GET" class="search-form" id="search-form">
-          <input type="text" name="search" class="search-input" placeholder="Buscar livros..." aria-label="Buscar na livraria" id="search-input">
+          <input type="text" name="search" class="search-input" placeholder="Buscar livros..."
+            aria-label="Buscar na livraria" id="search-input">
           <span class="search-icon" aria-hidden="true">🔍</span>
         </form>
 
@@ -69,7 +73,7 @@
         <aside class="profile-sidebar" aria-label="Opções do Perfil do Leitor">
           <div class="profile-card-summary">
             <div class="profile-avatar-mock" aria-hidden="true">AV</div>
-            <h2 class="profile-user-name">Aurelia Vance</h2>
+            <h1 class="profile-user-name">Aurelia Vance</h1>
             <p class="profile-user-email">aurelia@woodlandreads.com</p>
           </div>
 
@@ -77,14 +81,13 @@
             <a href="#personal-info" class="profile-nav-link active" id="profile-nav-personal">👤 Dados Pessoais</a>
             <a href="#orders-history" class="profile-nav-link" id="profile-nav-orders">📦 Histórico de Pedidos</a>
             <a href="#saved-addresses" class="profile-nav-link" id="profile-nav-addresses">🏡 Endereços Salvos</a>
-            <a href="#settings" class="profile-nav-link" id="profile-nav-settings">⚙️ Configurações da Conta</a>
             <a href="../index.html" class="profile-nav-link logout" id="profile-nav-logout">🚪 Sair (Logout)</a>
           </nav>
         </aside>
 
         <section class="profile-content-sheet" aria-label="Painel do Perfil">
 
-          <div class="profile-section-block" id="personal-info" style="margin-bottom: var(--spacing-xxl);">
+          <section class="profile-section-block" id="personal-info" style="margin-bottom: var(--spacing-xxl);">
             <h2 class="profile-content-title">Dados Pessoais</h2>
             <form action="#" method="POST" id="profile-details-form">
               <div class="form-row two-col">
@@ -116,87 +119,49 @@
 
               <button type="submit" class="btn btn-primary" id="btn-save-profile">Salvar Alterações</button>
             </form>
-          </div>
+          </section>
 
-          <div class="profile-section-block" id="orders-history" style="margin-bottom: var(--spacing-xxl); border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
+          <section class="profile-section-block" id="orders-history"
+            style="margin-bottom: var(--spacing-xxl); border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
             <h2 class="profile-content-title">Histórico de Pedidos</h2>
-            <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted);">Acompanhe suas curadoria recentes de livros vintage e envios.</p>
+            <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted);">Acompanhe suas curadoria
+              recentes de livros vintage e envios.</p>
 
-            <div class="orders-table-wrapper">
-              <table class="orders-table">
-                <thead>
-                  <tr>
-                    <th>Ref. #</th>
-                    <th>Data do Pedido</th>
-                    <th>Status</th>
-                    <th>Total Final</th>
-                    <th>Detalhes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="order-row-1102">
-                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1102</td>
-                    <td>May 27, 2026</td>
-                    <td><span class="status-badge processing">Processando</span></td>
-                    <td style="font-weight: 600;">$35.83</td>
-                    <td><a href="checkout.html" class="btn btn-outline btn-sm" id="order-invoice-1102">Ver Resumo</a></td>
-                  </tr>
-
-                  <tr id="order-row-1084">
-                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1084</td>
-                    <td>May 02, 2026</td>
-                    <td><span class="status-badge delivered">Entregue</span></td>
-                    <td style="font-weight: 600;">$18.99</td>
-                    <td><a href="#" class="btn btn-outline btn-sm" id="order-invoice-1084">Comprovante</a></td>
-                  </tr>
-
-                  <tr id="order-row-1021">
-                    <td style="font-weight: 700; color: var(--color-text-charcoal);">#BV-1021</td>
-                    <td>April 12, 2026</td>
-                    <td><span class="status-badge delivered">Entregue</span></td>
-                    <td style="font-weight: 600;">$29.49</td>
-                    <td><a href="#" class="btn btn-outline btn-sm" id="order-invoice-1021">Comprovante</a></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div id="orders-list" class="orders-list-container">
             </div>
-          </div>
+          </section>
 
-          <div class="profile-section-block" id="saved-addresses" style="border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
-            <h2 class="profile-content-title">Endereços Salvos</h2>
-            <p style="margin-bottom: var(--spacing-md); color: var(--color-text-muted);">Gerencie seus endereços de entrega padrão.</p>
-
-            <div class="address-grid">
-              <div class="address-card default" id="address-card-1">
-                <span class="address-badge-default">Padrão</span>
-                <p class="address-card-name">Aurelia Vance</p>
-                <p class="address-card-text">
-                  12 Cozy Cottage Lane<br>
-                  Woodland Glade, North Yorkshire<br>
-                  YO18 7LT, United Kingdom
-                </p>
-                <div class="address-card-actions">
-                  <a href="#" id="address-edit-1">Editar</a>
-                  <span style="color: var(--color-border-linen-hover);">|</span>
-                  <a href="#" id="address-remove-1" style="color: var(--color-text-muted);">Remover</a>
-                </div>
+          <section class="profile-section-block" id="saved-addresses"
+            style="border-top: 1px dashed var(--color-border-linen); padding-top: var(--spacing-xl);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--spacing-md);">
+              <div>
+                <h2 class="profile-content-title" style="margin-bottom: 0; border: none; padding: 0;">Endereços Salvos</h2>
+                <p style="color: var(--color-text-muted); margin-top: 8px;">Gerencie seus endereços de entrega padrão.</p>
               </div>
-
-              <div class="address-card" id="address-card-2">
-                <p class="address-card-name">Aurelia Vance (Edinburgh Studio)</p>
-                <p class="address-card-text">
-                  4 Inkwood Nook, Studio B<br>
-                  Old Town, Edinburgh<br>
-                  EH1 1TB, United Kingdom
-                </p>
-                <div class="address-card-actions">
-                  <a href="#" id="address-edit-2">Editar</a>
-                  <span style="color: var(--color-border-linen-hover);">|</span>
-                  <a href="#" id="address-remove-2" style="color: var(--color-text-muted);">Remover</a>
-                </div>
-              </div>
+              <button class="btn btn-primary btn-sm" id="btn-add-address" style="white-space: nowrap;">+ Novo</button>
             </div>
-          </div>
+
+            <form id="add-address-form" style="display: none; background: var(--bg-warm-cream); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border-linen); margin-bottom: var(--spacing-lg);">
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--color-text-charcoal);">Adicionar Endereço</h3>
+              <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                <label class="form-label" for="new-address-name">Identificação (ex: Casa, Trabalho)</label>
+                <input type="text" id="new-address-name" class="form-input" required>
+              </div>
+              <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                <label class="form-label" for="new-address-text">Endereço Completo</label>
+                <textarea id="new-address-text" class="form-input" rows="3" required></textarea>
+              </div>
+              <div style="display: flex; gap: var(--spacing-sm);">
+                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+                <button type="button" class="btn btn-sm" id="btn-cancel-address" style="background: transparent; border: 1px solid var(--color-border-linen); color: var(--color-text-medium);">Cancelar</button>
+              </div>
+            </form>
+
+            <p id="no-addresses-msg" style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 1rem; display: none;">Nenhum endereço cadastrado.</p>
+
+            <div class="address-grid" id="address-grid">
+            </div>
+          </section>
 
         </section>
       </div>
@@ -209,7 +174,8 @@
       <div class="footer-grid">
         <div class="footer-col-brand">
           <h3 class="font-serif">BookVerse</h3>
-          <p>A beautiful literary corner providing handcrafted structures, vintage-elegant covers, and sensory reading experiences since 2026.</p>
+          <p>A beautiful literary corner providing handcrafted structures, vintage-elegant covers, and sensory reading
+            experiences since 2026.</p>
           <address class="footer-socials">
             <a href="#" aria-label="Siga-nos no Instagram">📸</a>
             <a href="#" aria-label="Siga-nos no Pinterest">📌</a>
@@ -241,7 +207,8 @@
           <h4>A Carta Literária</h4>
           <p class="footer-newsletter-text">Assine para receber resenhas literárias, destaques vintage e descontos.</p>
           <form class="newsletter-form" id="newsletter-form" action="#" method="POST">
-            <input type="email" placeholder="Seu e-mail..." aria-label="Seu endereço de e-mail" class="newsletter-input" required id="newsletter-email">
+            <input type="email" placeholder="Seu e-mail..." aria-label="Seu endereço de e-mail" class="newsletter-input"
+              required id="newsletter-email">
             <button type="submit" class="btn btn-primary btn-sm" id="newsletter-submit">Assinar</button>
           </form>
         </div>
@@ -258,4 +225,5 @@
 
   <script type="module" src="../js/main.js"></script>
 </body>
+
 </html>
