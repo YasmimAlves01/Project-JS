@@ -297,4 +297,3 @@ function setupCardEvents(container) {
 }
 
 export { initCatalogPage };
-
