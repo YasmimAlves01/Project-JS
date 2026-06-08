@@ -12,6 +12,7 @@ function initProfilePage() {
   setupSidebarNavigation();
   loadAddresses();
   setupAddAddress();
+  setupAddressActions();
   highlightActiveSection();
 }
 
@@ -198,21 +199,34 @@ function loadAddresses() {
   const emptyMsg = document.getElementById('no-addresses-msg');
   if (!grid) return;
 
-  const addresses = get(ADDRESSES_KEY) || [];
+  let addresses = get(ADDRESSES_KEY) || [];
   grid.innerHTML = '';
+
+  let needsSave = false;
+  addresses = addresses.map((addr, index) => {
+    if (!addr.id) {
+      addr.id = 'addr_' + Date.now() + '_' + index;
+      needsSave = true;
+    }
+    return addr;
+  });
+
+  if (needsSave) {
+    save(ADDRESSES_KEY, addresses);
+  }
 
   if (addresses.length === 0) {
     if (emptyMsg) emptyMsg.style.display = 'block';
   } else {
     if (emptyMsg) emptyMsg.style.display = 'none';
-    
+
     addresses.forEach((addr, index) => {
       const card = document.createElement('article');
       card.className = index === 0 ? 'address-card default' : 'address-card';
       card.dataset.id = addr.id;
-      
+
       const defaultBadge = index === 0 ? '<span class="address-badge-default">Padrão</span>' : '';
-      
+
       card.innerHTML = `
         ${defaultBadge}
         <p class="address-card-name">${addr.name}</p>
@@ -233,48 +247,48 @@ function setupAddAddress() {
   const form = document.getElementById('add-address-form');
   const btnCancel = document.getElementById('btn-cancel-address');
   const grid = document.getElementById('address-grid');
-  
+
   if (!btnAdd || !form) return;
-  
+
   btnAdd.addEventListener('click', () => {
     form.style.display = 'block';
     btnAdd.style.display = 'none';
     if (grid) grid.style.display = 'none';
   });
-  
+
   btnCancel.addEventListener('click', () => {
     form.reset();
     form.style.display = 'none';
     btnAdd.style.display = 'block';
     if (grid) grid.style.display = 'grid';
   });
-  
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const nameInput = document.getElementById('new-address-name');
     const textInput = document.getElementById('new-address-text');
-    
+
     if (!nameInput || !textInput || !nameInput.value.trim() || !textInput.value.trim()) {
       openModal('Preencha todos os campos do endereço.', 'error');
       return;
     }
-    
+
     const addresses = get(ADDRESSES_KEY) || [];
     const newAddress = {
       id: 'addr_' + Date.now(),
       name: nameInput.value.trim(),
       text: textInput.value.trim()
     };
-    
+
     addresses.push(newAddress);
     save(ADDRESSES_KEY, addresses);
-    
+
     form.reset();
     form.style.display = 'none';
     btnAdd.style.display = 'block';
     if (grid) grid.style.display = 'grid';
-    
+
     loadAddresses();
     openModal('Endereço adicionado com sucesso! 🏡');
   });
@@ -288,12 +302,12 @@ function setupAddressActions() {
   addressGrid.addEventListener('click', (e) => {
     const editBtn = e.target.closest('.address-edit-btn');
     const removeBtn = e.target.closest('.address-remove-btn');
-    
+
     if (editBtn) {
       e.preventDefault();
       handleEditAddress(editBtn);
     }
-    
+
     if (removeBtn) {
       e.preventDefault();
       handleRemoveAddress(removeBtn);
@@ -304,63 +318,65 @@ function setupAddressActions() {
 function handleEditAddress(link) {
   const card = link.closest('.address-card');
   const cardId = card.dataset.id;
-  
+
   const nameEl = card.querySelector('.address-card-name');
   const textEl = card.querySelector('.address-card-text');
   const actionsDiv = card.querySelector('.address-card-actions');
-  
+
   if (card.classList.contains('editing')) {
+    // Salvar alterações e persistir
     const inputsContainer = card.querySelector('.edit-inputs-container');
-    const nameInput = inputsContainer.children[0];
-    const textInput = inputsContainer.children[1];
-    
+    const nameInput = inputsContainer.querySelector('input');
+    const textInput = inputsContainer.querySelector('textarea');
+
     const newName = nameInput.value.trim();
     const newText = textInput.value.trim();
-    
+
     if (!newName || !newText) {
       openModal('Preencha ambos os campos.', 'error');
       return;
     }
-    
+
     const addresses = get(ADDRESSES_KEY) || [];
-    const target = addresses.find(a => a.id === cardId);
+    const target = addresses.find(a => String(a.id) === String(cardId));
     if (target) {
       target.name = newName;
       target.text = newText;
       save(ADDRESSES_KEY, addresses);
     }
-    
+
     loadAddresses();
     openModal('Endereço atualizado! 🏡');
     return;
   }
-  
+
+  // Entrar no modo de edição (Manipulação do DOM / Traversal)
   card.classList.add('editing');
-  
+
   const currentName = nameEl.textContent;
   const currentText = textEl.innerHTML.replace(/<br\s*[\/]?>/gi, '\n');
-  
+
   nameEl.style.display = 'none';
   textEl.style.display = 'none';
-  
+
   const container = document.createElement('div');
   container.className = 'edit-inputs-container';
   container.style.marginBottom = '12px';
-  
+
   const editName = document.createElement('input');
   editName.type = 'text';
   editName.className = 'form-input';
   editName.value = currentName;
   editName.style.marginBottom = '8px';
-  
+
   const editText = document.createElement('textarea');
   editText.className = 'form-input';
   editText.rows = 3;
   editText.value = currentText;
-  
+
   container.appendChild(editName);
   container.appendChild(editText);
-  
+
   card.insertBefore(container, actionsDiv);
   editName.focus();
   link.textContent = 'Salvar';
@@ -371,16 +387,17 @@ function handleRemoveAddress(link) {
   const cardId = card.dataset.id;
   const nameEl = card.querySelector('.address-card-name');
   const name = nameEl ? nameEl.textContent : 'Endereço';
-  
+
   card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
   card.style.opacity = '0';
   card.style.transform = 'scale(0.95)';
-  
+
   setTimeout(() => {
+    // Deletar com persistência
     let addresses = get(ADDRESSES_KEY) || [];
-    addresses = addresses.filter(a => a.id !== cardId);
+    addresses = addresses.filter(a => String(a.id) !== String(cardId));
     save(ADDRESSES_KEY, addresses);
-    
+
     loadAddresses();
     openModal(`Endereço de ${name} removido.`);
   }, 300);
