@@ -228,4 +228,3 @@ function setupPaymentMethodToggle() {
 }
 
 export { initCheckoutPage };
-
