@@ -1,160 +1,316 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script type="module" src="js/main.js"></script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bem-vindo à BookVerse, uma livraria vintage aconchegante para almas literárias. Descubra clássicos selecionados, coletâneas de poesia e mistérios locais.">
+  <title>BookVerse | Sua Livraria Online Aconchegante</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
 </head>
-<body>
+<body data-page="home">
 
-    <nav>
-        <input id="pesquisa" type="text" placeholder="Pesquise o seu jogo favorito">
- 
-        <a href="pages/comunidades.html">Comunidades</a>
-        <a href="pages/biblioteca.html">Sua Biblioteca</a>
-        <a href="pages/emAlta.html">Em Alta</a>
- 
-        <img src="assets/notification-icon.png" alt="Ícone de Notificação">
-        
-        <div class="perfil">
-            <img src="assets/profile-photo-img.png" alt="Foto de Perfil">
-            <span>Antoni_CayDryl</span>
-        </div>
-    </nav>
- 
-    <header>
-            <h1>Encontre o seu Squad</h1>
-            <p>Encontre os maiores canais de comunicação dos seus jogos favoritos</p>
-            <p>Faça amigos, monte grupos, participe de campeonatos e seja o melhor!</p>
- 
-        <img src="assets/header-img.png" alt="Personagem Hero">
-    </header>
- 
-    <section id="diferenciais">
-        <div class="diferenciais__card">
-                <img src="assets/riotGames-icon.png" alt="Logo Riot Games">
-                <img src="assets/epicgames-icon.png" alt="Logo Epic Games">
-                <img src="assets/steam-icon.png" alt="Logo Steam">
-            <p>Reúna as informações de todas as suas contas em um só local</p>
-        </div>
- 
-        <div class="diferenciais__card">
-            <img src="assets/joystick-icon.png" alt="Ícone JoyStick">
-            <p>Encontre a comunidade dos seus jogos favoritos em um só lugar</p>
-        </div>
- 
-        <div class="diferenciais__card">
-            <img src="assets/reward-icon.png" alt="Ícone de Recompensa">
-            <p>Traga todas as suas conquistas e medalhas. Mostre quem é o campeão</p>
-        </div>
-    </section>
- 
-    <section id="maiores-comunidades">
-            <h2>Maiores Comunidades</h2>
-            <a href="pages/comunidades.html">Ver mais</a>
- 
-            <a href="#">
-                <img src="#" alt="Banner Roblox">
-                    <h3>Roblox</h3>
-                    <p>5890 membros online</p>
-                    <p>87 amigos seus são membros</p>
-            </a>
- 
-            <a href="#">
-                <img src="#" alt="Banner Fortnite">
-                    <h3>Fortnite</h3>
-                    <p>4280 membros online</p>
-                    <p>95 amigos seus são membros</p>
-            </a>
- 
-            <a href="#">
-                <img src="#" alt="Banner Minecraft">
-                    <h3>Minecraft</h3>
-                    <p>8563 membros online</p>
-                    <p>128 amigos seus são membros</p>
-            </a>
-    </section>
+  <p class="announcement-bar" id="announcement-bar">
+     Frete grátis em leituras aconchegantes acima de R$35! Use o código LEITURACOZY
+  </p>
 
-    <section id="motivo">
-        <h2>Por que nos escolher?</h2>
-        <div class="motivo__card__container">
-            <div class="motivo__card">
-                <img src="assets/medal-icon.png" alt="Ícone Medalha">
-                <p>Tenha mais chances de ganhar medalhas e recolher conquistas</p>
+  <header>
+    <div class="header-container">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <a href="index.html" class="logo" id="header-logo">
+        Book<span>Verse</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active" id="nav-home">Início</a>
+        <a href="pages/catalog.html" class="nav-link" id="nav-catalog">Catálogo</a>
+        <a href="pages/favorites.html" class="nav-link" id="nav-favorites">Favoritos</a>
+        <a href="pages/profile.html" class="nav-link" id="nav-profile">Perfil</a>
+      </nav>
+
+      <div class="header-actions">
+        <form action="pages/catalog.html" method="GET" class="search-form" id="search-form">
+          <input type="text" name="search" class="search-input" placeholder="Buscar livros..." aria-label="Buscar na livraria" id="search-input">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+        </form>
+
+        <a href="pages/favorites.html" class="icon-btn" aria-label="Ver Favoritos" id="favorites-icon-btn">
+          <span>♥</span>
+          <span class="badge-count" id="favorites-badge">3</span>
+        </a>
+
+        <a href="pages/cart.html" class="icon-btn" aria-label="Ver Carrinho" id="cart-icon-btn">
+          <span>🛒</span>
+          <span class="badge-count" id="cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-badge">
+            <span>✨</span> Curadoria Recém-Chegada
+          </p>
+          <h1 class="hero-title">
+            Encontre seu próximo <span>santuário literário</span> em um cantinho aconchegante de palavras.
+          </h1>
+          <p class="hero-description">
+            Bem-vindo ao BookVerse. Curadoria de histórias exquisitas, poesias belas e clássicos vintage. Enrole-se em uma manta quentinha, sirva uma xícara de chá e explore nossas estantes virtuais projetadas para leitores que apreciam uma bela capa física.
+          </p>
+          <div class="hero-actions">
+            <a href="pages/catalog.html" class="btn btn-primary btn-lg" id="hero-cta-shop">Explorar o Acervo</a>
+            <a href="pages/catalog.html?curated=classics" class="btn btn-outline btn-lg" id="hero-cta-curated">Clássicos Vintage</a>
+          </div>
+        </div>
+        <div class="hero-illustration-css" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-section" id="home-categories">
+    <div class="container">
+      <h2 class="sr-only">Categorias</h2>
+      <div class="category-grid">
+        <a href="pages/catalog.html?genre=fiction" class="category-card" id="category-fiction">
+          <span class="category-icon">🌿</span>
+          <span class="category-name">Ficção Aconchegante</span>
+          <span class="category-count">124 títulos</span>
+        </a>
+        <a href="pages/catalog.html?genre=mystery" class="category-card" id="category-mystery">
+          <span class="category-icon">🔍</span>
+          <span class="category-name">Mistérios</span>
+          <span class="category-count">82 títulos</span>
+        </a>
+        <a href="pages/catalog.html?genre=poetry" class="category-card" id="category-poetry">
+          <span class="category-icon">📜</span>
+          <span class="category-name">Poesia & Arte</span>
+          <span class="category-count">48 títulos</span>
+        </a>
+        <a href="pages/catalog.html?genre=philosophy" class="category-card" id="category-philosophy">
+          <span class="category-icon">🏛️</span>
+          <span class="category-name">Filosofia</span>
+          <span class="category-count">65 títulos</span>
+        </a>
+        <a href="pages/catalog.html?genre=cozy" class="category-card" id="category-cozy">
+          <span class="category-icon">🍯</span>
+          <span class="category-name">Artes e Ofícios</span>
+          <span class="category-count">36 títulos</span>
+        </a>
+        <a href="pages/catalog.html?genre=romance" class="category-card" id="category-romance">
+          <span class="category-icon">🐚</span>
+          <span class="category-name">Romance do Mar</span>
+          <span class="category-count">51 títulos</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="curated-section" id="home-curated-reads">
+    <div class="container">
+      <div class="curated-header">
+        <div class="section-info">
+          <div class="italic-subtitle">Favoritos dos Leitores</div>
+          <h2 class="section-title">Recomendações Aconchegantes de Outono</h2>
+        </div>
+        <a href="pages/catalog.html" class="btn btn-outline" id="curated-view-all">Ver Catálogo Completo</a>
+      </div>
+
+      <div class="book-grid">
+        <article class="book-card" id="book-card-1">
+          <div class="book-tag sale">25% Off</div>
+          <button class="favorite-btn-overlay active" aria-label="Remover dos Favoritos">♥</button>
+          
+          <figure class="book-card-cover">
+            <div class="book-cover-css cover-theme-2" aria-hidden="true">
+              <span class="cover-emblem">🌿</span>
+              <div class="cover-title-text">The Whispering Woodlands</div>
+              <div class="cover-author-text">Clara Hearthwood</div>
             </div>
- 
-            <div class="motivo__card">
-                <img src="assets/people-icon.png" alt="Ícone Pessoas">
-                <p>Reúna seus amigos nas suas comunidades favoritas e participem juntos</p>
-            </div>
- 
-            <div class="motivo__card">
-                <img src="assets/joystick2-icon.png" alt="Ícone Controle">
-                <p>Seus jogos favoritos em um único local, e com todas as informações que você precisa</p>
+          </figure>
+          
+          <span class="book-card-genre">Ficção</span>
+          <h3 class="book-card-title"><a href="pages/details.html" id="book-link-1">The Whispering Woodlands</a></h3>
+          <p class="book-card-author">de Clara Hearthwood</p>
+          
+          <div class="book-card-meta">
+            <div class="rating-stars" aria-label="Avaliação: 4,8 de 5 estrelas">
+              ★★★★★ <span class="rating-count">(42)</span>
             </div>
             
-            <div class="motivo__card">
-                <img src="assets/comment-icon.png" alt="Ícone Comentário">
-                <p>Veja as avaliações de jogos em um só lugar! Tudo reunido para ajudar na sua decisão</p>
+            <div class="book-card-bottom">
+              <span class="book-card-price">$14.99 <span class="book-card-price-original">$19.99</span></span>
+              <a href="pages/cart.html" class="btn btn-primary btn-sm" aria-label="Adicionar ao Carrinho: The Whispering Woodlands" id="add-to-cart-1">🛒 Adicionar</a>
             </div>
- 
-            <div class="motivo__card">
-                <img src="assets/information-icon.png" alt="Ícone de Informação">
-                <p>Seja o primeiro a saber das novidades do mundo game! Te atualizamos em tempo real</p>
+          </div>
+        </article>
+
+        <article class="book-card" id="book-card-2">
+          <div class="book-tag">Mais Vendido</div>
+          <button class="favorite-btn-overlay" aria-label="Adicionar aos Favoritos">♥</button>
+          
+          <figure class="book-card-cover">
+            <div class="book-cover-css cover-theme-1" aria-hidden="true">
+              <span class="cover-emblem">🔍</span>
+              <div class="cover-title-text">Midnight at Inkwood Manor</div>
+              <div class="cover-author-text">Julian Croft</div>
             </div>
+          </figure>
+          
+          <span class="book-card-genre">Mistério</span>
+          <h3 class="book-card-title"><a href="pages/details.html" id="book-link-2">Midnight at Inkwood Manor</a></h3>
+          <p class="book-card-author">de Julian Croft</p>
+          
+          <div class="book-card-meta">
+            <div class="rating-stars" aria-label="Avaliação: 4,9 de 5 estrelas">
+              ★★★★★ <span class="rating-count">(118)</span>
+            </div>
+            
+            <div class="book-card-bottom">
+              <span class="book-card-price">$16.50</span>
+              <a href="pages/cart.html" class="btn btn-primary btn-sm" aria-label="Adicionar ao Carrinho: Midnight at Inkwood Manor" id="add-to-cart-2">🛒 Adicionar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="book-card" id="book-card-3">
+          <button class="favorite-btn-overlay active" aria-label="Remover dos Favoritos">♥</button>
+          
+          <figure class="book-card-cover">
+            <div class="book-cover-css cover-theme-3" aria-hidden="true">
+              <span class="cover-emblem">✦</span>
+              <div class="cover-title-text">Stars & Small Delights</div>
+              <div class="cover-author-text">Aurelia Vance</div>
+            </div>
+          </figure>
+          
+          <span class="book-card-genre">Poesia</span>
+          <h3 class="book-card-title"><a href="pages/details.html" id="book-link-3">Stars & Small Delights</a></h3>
+          <p class="book-card-author">de Aurelia Vance</p>
+          
+          <div class="book-card-meta">
+            <div class="rating-stars" aria-label="Avaliação: 4,7 de 5 estrelas">
+              ★★★★★ <span class="rating-count">(29)</span>
+            </div>
+            
+            <div class="book-card-bottom">
+              <span class="book-card-price">$12.99</span>
+              <a href="pages/cart.html" class="btn btn-primary btn-sm" aria-label="Adicionar ao Carrinho: Stars & Small Delights" id="add-to-cart-3">🛒 Adicionar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="book-card" id="book-card-4">
+          <button class="favorite-btn-overlay" aria-label="Adicionar aos Favoritos">♥</button>
+          
+          <figure class="book-card-cover">
+            <div class="book-cover-css cover-theme-4" aria-hidden="true">
+              <span class="cover-emblem">🏛️</span>
+              <div class="cover-title-text">The Ancient Hearth</div>
+              <div class="cover-author-text">Thomas H. Locke</div>
+            </div>
+          </figure>
+          
+          <span class="book-card-genre">Filosofia</span>
+          <h3 class="book-card-title"><a href="pages/details.html" id="book-link-4">The Ancient Hearth</a></h3>
+          <p class="book-card-author">de Thomas H. Locke</p>
+          
+          <div class="book-card-meta">
+            <div class="rating-stars" aria-label="Avaliação: 4,8 de 5 estrelas">
+              ★★★★★ <span class="rating-count">(53)</span>
+            </div>
+            
+            <div class="book-card-bottom">
+              <span class="book-card-price">$18.99</span>
+              <a href="pages/cart.html" class="btn btn-primary btn-sm" aria-label="Adicionar ao Carrinho: The Ancient Hearth" id="add-to-cart-4">🛒 Adicionar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="cozy-banner" id="cozy-book-club">
+        <div class="cozy-banner-grid">
+          <div class="cozy-banner-left">
+            <h3 class="cozy-banner-title">Junte-se ao <span>Clube de Chá & Ficção da BookVerse</span></h3>
+            <p class="cozy-banner-desc">
+              Todo mês, enviamos uma cópia física embrulhada com carinho junto com marcadores de páginas personalizados e sachês de chá premium. Conecte-se e aconchegue-se com leitores do mundo todo.
+            </p>
+            <a href="pages/profile.html?action=subscribe" class="btn btn-secondary" id="cozy-banner-cta">Assinar por R$19/mês</a>
+          </div>
+          <div class="cozy-banner-right">
+            <article class="cozy-banner-card">
+              <p class="cozy-banner-card-title">O Chá & Leitura do Mês</p>
+              <p class="cozy-banner-card-quote">"Ler um livro é vagar por uma clareira à meia-noite com uma luz quente na palma da mão."</p>
+              <p class="text-center" style="font-size: 0.8rem; color: var(--color-text-muted);">Destaque do mês: <em>The Whispering Woodlands</em> & chá de sálvia orgânica.</p>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
+    </div>
+  </main>
 
-    <section id="games-em-alta">
-        <h2>Games em Alta</h2>
-        <!--  
-            <a href="#">
-                <span class="games-em-alta__ranking">#1</span>
-                <img src="#" alt="Banner CS:GO">
-                <h3>CS:GO</h3>
-            </a>
- 
-            <a href="#">
-                <span class="games-em-alta__ranking">#2</span>
-                <img src="#" alt="Banner Valorant">
-                <h3>Valorant</h3>
-            </a>
- 
-            <a href="#">
-                <span class="games-em-alta__ranking">#3</span>
-                <img src="#" alt="Banner League of Legends">
-                <h3>League of Legends</h3>
-            </a> 
-        -->
-    </section>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <h3 class="font-serif">BookVerse</h3>
+          <p>A beautiful literary corner providing handcrafted structures, vintage-elegant covers, and sensory reading experiences since 2026.</p>
+          <address class="footer-socials">
+            <a href="#" aria-label="Siga-nos no Instagram">📸</a>
+            <a href="#" aria-label="Siga-nos no Pinterest">📌</a>
+            <a href="#" aria-label="Siga-nos no Twitter">🐦</a>
+          </address>
+        </div>
 
-    <section id="cadastro">
-        <img src="assets/characterZiggs-img.png" alt="Personagem Ziggs">
-        <img src="assets/characterGhost-img.png" alt="Personagem">
- 
-            <h2>Faça parte desse time!</h2>
- 
-            <form action="#" method="post">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
-         
-                    <label for="tagName">Tag Name</label>
-                    <input type="text" id="tagName" name="tagName" placeholder="Tag Name" required>
-   
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required>
-                <button type="submit">Continuar</button>
-            </form>
-    </section>
- 
- 
-    <footer>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="pages/catalog.html" id="footer-link-catalog">Todos os Livros</a></li>
+            <li><a href="pages/catalog.html?filter=new" id="footer-link-new">Novidades</a></li>
+            <li><a href="pages/catalog.html?filter=bestsellers" id="footer-link-bestsellers">Mais Vendidos</a></li>
+            <li><a href="pages/catalog.html?filter=sale" id="footer-link-sale">Ofertas Especiais</a></li>
+          </ul>
+        </div>
 
-    </footer>
- 
+        <div class="footer-col">
+          <h4>Seu Santuário</h4>
+          <ul class="footer-links">
+            <li><a href="pages/profile.html" id="footer-link-profile">Sua Conta</a></li>
+            <li><a href="pages/favorites.html" id="footer-link-favorites">Lista de Desejos (Favoritos)</a></li>
+            <li><a href="pages/cart.html" id="footer-link-cart">Carrinho de Compras</a></li>
+            <li><a href="pages/checkout.html" id="footer-link-checkout">Painel de Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>A Carta Literária</h4>
+          <p class="footer-newsletter-text">Assine para receber resenhas literárias aconchegantes, destaques de livros vintage e descontos.</p>
+          <form class="newsletter-form" id="newsletter-form" action="#" method="POST">
+            <input type="email" placeholder="Seu e-mail aconchegante..." aria-label="Seu endereço de e-mail" class="newsletter-input" required id="newsletter-email">
+            <button type="submit" class="btn btn-primary btn-sm" id="newsletter-submit">Assinar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 BookVerse. Desenvolvido com HTML5 e CSS3 puros. Criado com tons quentes e aconchegantes.</p>
+        <div class="footer-payment-icons" aria-label="Formas de Pagamento">
+          <span>💳</span> <span>🌐</span> <span>🍵</span> <span>📦</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
