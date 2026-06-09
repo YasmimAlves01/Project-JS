@@ -27,7 +27,7 @@ function initDetailsPage() {
     if (cachedBook) {
       CURRENT_BOOK = cachedBook;
     } else {
-      CURRENT_BOOK.id = bookId; // Fallback
+      CURRENT_BOOK.id = bookId;
     }
   }
 
@@ -38,11 +38,9 @@ function initDetailsPage() {
 }
 
 function populateBookDetails() {
-  // Breadcrumbs
   const breadcrumbActive = document.querySelector('.breadcrumbs .active');
   if (breadcrumbActive) breadcrumbActive.textContent = CURRENT_BOOK.title;
 
-  // Cover
   const coverEl = document.querySelector('.book-sheet-gallery .book-cover-css');
   if (coverEl) {
     coverEl.className = `book-cover-css ${CURRENT_BOOK.coverTheme}`;
@@ -54,7 +52,6 @@ function populateBookDetails() {
     if (coverAuthor) coverAuthor.textContent = CURRENT_BOOK.author;
   }
 
-  // Info
   const tag = document.querySelector('.book-details-tag');
   const title = document.querySelector('.book-details-title');
   const author = document.querySelector('.book-details-author');

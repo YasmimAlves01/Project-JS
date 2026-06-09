@@ -265,7 +265,7 @@ function setupCardEvents(container) {
       const title = card.querySelector('.book-card-title a').textContent;
       const book = getBookFromDb(bookId);
 
-      if (!book) return; // Fail safe
+      if (!book) return;
 
       if (isFavorite(bookId)) {
         removeFavorite(bookId);
