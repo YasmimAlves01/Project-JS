@@ -298,7 +298,7 @@ function setupAddressActions() {
   const addressGrid = document.getElementById('address-grid');
   if (!addressGrid) return;
 
-  // Delegação de eventos no container pai, utilizando DOM traversal
+  
   addressGrid.addEventListener('click', (e) => {
     const editBtn = e.target.closest('.address-edit-btn');
     const removeBtn = e.target.closest('.address-remove-btn');
@@ -324,7 +324,7 @@ function handleEditAddress(link) {
   const actionsDiv = card.querySelector('.address-card-actions');
 
   if (card.classList.contains('editing')) {
-    // Salvar alterações e persistir
+    
     const inputsContainer = card.querySelector('.edit-inputs-container');
     const nameInput = inputsContainer.querySelector('input');
     const textInput = inputsContainer.querySelector('textarea');
@@ -350,7 +350,7 @@ function handleEditAddress(link) {
     return;
   }
 
-  // Entrar no modo de edição (Manipulação do DOM / Traversal)
+  
   card.classList.add('editing');
 
   const currentName = nameEl.textContent;
@@ -393,7 +393,7 @@ function handleRemoveAddress(link) {
   card.style.transform = 'scale(0.95)';
 
   setTimeout(() => {
-    // Deletar com persistência
+
     let addresses = get(ADDRESSES_KEY) || [];
     addresses = addresses.filter(a => String(a.id) !== String(cardId));
     save(ADDRESSES_KEY, addresses);
